@@ -17,15 +17,11 @@ try {
 	console.error(error);
 }
 */
-
-
-const fetch = require('node-fetch'); // Ensure you have 'node-fetch' installed if you're using Node.js
-
 const url = 'https://asos-marketplace.p.rapidapi.com/product?productID=133831038';
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'YOUR_API_KEY', // Replace YOUR_API_KEY with your actual API key
+        'X-RapidAPI-Key': 'YOUR_API_KEY', // Make sure to replace YOUR_API_KEY with your actual API key
         'X-RapidAPI-Host': 'asos-marketplace.p.rapidapi.com'
     }
 };
@@ -33,10 +29,10 @@ const options = {
 async function fetchProduct() {
     try {
         const response = await fetch(url, options);
-        const result = await response.text(); // Consider using response.json() if the API returns JSON
+        const result = await response.text(); // Or response.json() if the response is in JSON format
         console.log(result);
     } catch (error) {
-        console.error(error);
+        console.error('Fetch error:', error);
     }
 }
 
