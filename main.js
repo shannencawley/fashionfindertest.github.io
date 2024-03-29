@@ -1,6 +1,4 @@
-const url = 'https://kohls.p.rapidapi.com/catalog/sale-womens.jsp?CN=Promotions:Sale+Gender:Womens&cc=sale-TN2.0-S-sale-womens'
-
-//const url = 'https://kohls.p.rapidapi.com/categories/list';
+const url = 'https://kohls.p.rapidapi.com/categories/list';
 const options = {
 	method: 'GET',
 	headers: {
@@ -11,8 +9,7 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
-	//const result = await response.text();
-	const result = await response.json();
+	const result = await response.text();
 	console.log(result);
 } catch (error) {
 	console.error(error);
