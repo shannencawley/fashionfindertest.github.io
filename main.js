@@ -1,4 +1,4 @@
-const url = 'https://kohls.p.rapidapi.com/products/detail?webID=4201989';
+const url = 'https://kohls.p.rapidapi.com/categories/list';
 const options = {
 	method: 'GET',
 	headers: {
