@@ -1,7 +1,7 @@
 <script>
 function fetchSearchResults(query) {
-  var apiKey = 'YOUR_API_KEY';
-  var engineId = 'YOUR_ENGINE_ID';
+  var apiKey = 'AIzaSyAK2z9rZdXSLlJ9piz24KR1GIpg2t_O08g';
+  var engineId = 'e42db96d918aa4f45';
   var url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&cx=${engineId}&key=${apiKey}`;
 
   fetch(url)
