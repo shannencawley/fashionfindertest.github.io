@@ -10,6 +10,25 @@
     <link rel="icon" href="https://fashion-finder.store//favicon.png">
     <!--<link rel="stylesheet" href="styles.css"> -->
 	<link rel="stylesheet" type= "text/css" href="styles.css">
+
+<script>
+function fetchSearchResults(query) {
+  var apiKey = 'AIzaSyAK2z9rZdXSLlJ9piz24KR1GIpg2t_O08g';
+  var engineId = 'e42db96d918aa4f45';
+  var url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&cx=${engineId}&key=${apiKey}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); // Process and display your search results here
+    })
+    .catch(error => console.error('Error fetching search results:', error));
+}
+</script>
+
+
+
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
