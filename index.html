@@ -10,44 +10,6 @@
     <link rel="icon" href="https://fashion-finder.store//favicon.png">
     <!--<link rel="stylesheet" href="styles.css"> -->
 	<link rel="stylesheet" type= "text/css" href="styles.css">
-<script>
-function fetchSearchResults(query) { // beginning of JSON API implementation attempt
-    var apiKey = 'AIzaSyAK2z9rZdXSLlJ9piz24KR1GIpg2t_O08g';
-    var engineId = 'e42db96d918aa4f45';
-    var url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&cx=${engineId}&key=${apiKey}`;
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const resultsContainer = document.createElement('div');
-            resultsContainer.id = 'search-results';
-            document.querySelector('main').appendChild(resultsContainer);
-
-            data.items.forEach(item => {
-                // Create container for each result
-                const resultDiv = document.createElement('div');
-                resultDiv.className = 'search-result';
-
-                // Create and fill title element
-                const titleElement = document.createElement('h3');
-                titleElement.innerHTML = `<a href="${item.link}">${item.title}</a>`;
-
-                // Create and fill snippet element
-                const snippetElement = document.createElement('p');
-                snippetElement.textContent = item.snippet;
-
-                // Append title and snippet to result container
-                resultDiv.appendChild(titleElement);
-                resultDiv.appendChild(snippetElement);
-
-                // Append result container to results container
-                resultsContainer.appendChild(resultDiv);
-            });
-        })
-        .catch(error => console.error('Error fetching search results:', error));
-} // END of JSON API implementation attempt 
-</script>
-
 
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
