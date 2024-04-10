@@ -256,3 +256,19 @@ nav ul li a:hover {
   font-weight: 700;
   font-style: italic;
 }
+
+
+
+.clicked-format {
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 15px;            /* Add some padding */
+  border: 2px solid #eaeaea; /* A subtle border */
+  border-radius: 5px;       /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A light shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.clicked-format:hover {
+  transform: translateY(-2px); /* Slightly raise the item on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
+}
