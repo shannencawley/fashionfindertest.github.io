@@ -272,3 +272,17 @@ nav ul li a:hover {
   transform: translateY(-2px); /* Slightly raise the item on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
 }
+
+/* Ensure the thumbnail image container is positioned relatively */
+.gcse-searchresults .gsc-thumbnail-inside {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Position the title text below the image */
+.gcse-searchresults .gs-title {
+    display: block; /* make sure the title is on a new line */
+    text-align: center; /* center the text */
+    margin-top: 5px; /* space between the image and text */
+}
