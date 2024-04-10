@@ -99,25 +99,5 @@
             </div>
         </div>
     </footer>
-	
-<script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    function updateSearchResults() {
-      var results = document.querySelectorAll('.gs-imageResult');
-      results.forEach(function(result) {
-        var img = result.querySelector('img');
-        var title = img ? img.getAttribute('alt') : ''; // Get the alt text of the image, which often contains the title
-        var descriptionDiv = document.createElement('div');
-        descriptionDiv.className = 'text-description';
-        descriptionDiv.textContent = title;
-        result.appendChild(descriptionDiv); // Add the title as a new div with class 'text-description'
-      });
-    }
-
-    // You may need to call this function multiple times depending on when the CSE results load
-    updateSearchResults();
-    // Optionally, set up a MutationObserver to call updateSearchResults when new results are loaded
-  });
-</script>
 </body>
 </html>
