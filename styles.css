@@ -257,32 +257,20 @@ nav ul li a:hover {
   font-style: italic;
 }
 
-
-
-.clicked-format {
-  background-color: #f0f0f0; /* Light grey background */
-  padding: 15px;            /* Add some padding */
-  border: 2px solid #eaeaea; /* A subtle border */
-  border-radius: 5px;       /* Slightly rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A light shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effect */
+.gs-imageResult {
+  position: relative; /* Needed for absolute positioning of children */
+  text-align: center; /* Center-align the text */
+  /* add additional styling as needed */
 }
 
-.clicked-format:hover {
-  transform: translateY(-2px); /* Slightly raise the item on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
-}
-
-/* Ensure the thumbnail image container is positioned relatively */
-.gcse-searchresults .gsc-thumbnail-inside {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-}
-
-/* Position the title text below the image */
-.gcse-searchresults .gs-title {
-    display: block; /* make sure the title is on a new line */
-    text-align: center; /* center the text */
-    margin-top: 5px; /* space between the image and text */
+/* Style the text under the image, assuming it's within a div or span with class 'text-description' */
+.gs-imageResult .text-description {
+  position: absolute;
+  bottom: 0; /* Position at the bottom of the container */
+  left: 0;
+  width: 100%; /* Full width */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for legibility */
+  color: white; /* Light-colored text */
+  padding: 5px 0; /* Some padding at the top and bottom */
+  /* add additional styling as needed */
 }
