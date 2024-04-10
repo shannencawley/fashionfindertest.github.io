@@ -99,5 +99,27 @@
             </div>
         </div>
     </footer>
+
+	<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check every half a second to see if the elements are present
+    var checkExist = setInterval(function() {
+      if (document.querySelector('.gs-imageResult .gs-previewTitle')) {
+        clearInterval(checkExist); // Once found, stop checking
+        // Apply styles directly with JavaScript
+        document.querySelectorAll('.gs-imageResult .gs-previewTitle').forEach(function(elem) {
+          elem.style.display = 'block';
+          elem.style.color = '#000';
+          elem.style.backgroundColor = '#FFF';
+          elem.style.fontSize = '14px';
+          elem.style.padding = '5px 0';
+          elem.style.marginTop = '10px';
+          elem.style.width = '100%';
+          elem.style.boxSizing = 'border-box';
+        });
+      }
+    }, 500);
+  });
+</script>
 </body>
 </html>
