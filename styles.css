@@ -257,20 +257,20 @@ nav ul li a:hover {
   font-style: italic;
 }
 
-.gs-imageResult {
-  position: relative; /* Needed for absolute positioning of children */
-  text-align: center; /* Center-align the text */
-  /* add additional styling as needed */
+.gs-imageResult .gs-previewTitle {
+    display: block; /* Ensure the title is displayed as a block to move it below the image */
+    color: #000; /* Change the text color as desired */
+    background-color: #FFF; /* Add a background color if needed */
+    font-size: 14px; /* Adjust the font size as needed */
+    padding: 5px 0; /* Add padding above and below the text */
+    margin-top: 10px; /* Space between the image and the title */
+    width: 100%; /* Ensure the title takes up 100% width of its container */
+    box-sizing: border-box; /* Make sure padding and border are included in the width */
+    /* More styles can be added as needed */
 }
 
-/* Style the text under the image, assuming it's within a div or span with class 'text-description' */
-.gs-imageResult .text-description {
-  position: absolute;
-  bottom: 0; /* Position at the bottom of the container */
-  left: 0;
-  width: 100%; /* Full width */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for legibility */
-  color: white; /* Light-colored text */
-  padding: 5px 0; /* Some padding at the top and bottom */
-  /* add additional styling as needed */
+.gs-imageResult .gs-previewTitle {
+    display: block !important;
+    color: #000 !important;
+    /* and so on for other properties as needed */
 }
