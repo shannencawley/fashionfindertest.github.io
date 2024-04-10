@@ -101,43 +101,37 @@
     </footer>
 
 <script>
-  // Function to add click event listeners to search results
   function addClickEventToResults() {
-    // Get all the search result links
-    const searchResults = document.querySelectorAll('.gsc-result .gsc-thumbnail-inside a.gs-title');
+  const searchResults = document.querySelectorAll('.gsc-result .gsc-thumbnail-inside a.gs-title');
 
-    searchResults.forEach(function(result) {
-      // Add an event listener to each search result link
-      result.addEventListener('click', function() {
-        // Your logic to change the format of the clicked listing goes here
-        // For example, add a class to the parent element to change its style
-        this.parentElement.classList.add('clicked-format');
-      });
-    });
-  }
+  searchResults.forEach(function(resultLink) {
+    resultLink.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the link from navigating.
 
-  // Since the CSE results are loaded asynchronously, use a MutationObserver to detect when results are added to the DOM
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.addedNodes && mutation.addedNodes.length > 0) {
-        // Assume that any added node with a class of 'gsc-result' is a search result
-        const newResults = Array.from(mutation.addedNodes).some(function(node) {
-          return node.classList && node.classList.contains('gsc-result');
-        });
+      // Assume the image and title are siblings in the DOM structure and the parent has a class 'gsc-thumbnail-inside'.
+      const parentElement = this.closest('.gsc-thumbnail-inside');
+      const imageElement = parentElement.querySelector('img'); // This selector might need to be adjusted.
+      const titleText = this.innerText;
 
-        if (newResults) {
-          // New search results have been added, so add click event listeners to them
-          addClickEventToResults();
-        }
-      }
+      // Now create a new format for the clicked result.
+      const newFormatDiv = document.createElement('div');
+      newFormatDiv.classList.add('new-format');
+
+      // Assuming the image source needs to be the same.
+      const newImage = document.createElement('img');
+      newImage.src = imageElement.src;
+      newFormatDiv.appendChild(newImage);
+
+      const newTitle = document.createElement('p');
+      newTitle.textContent = titleText;
+      newFormatDiv.appendChild(newTitle);
+
+      // Clear the current content of the parent element and append the new format.
+      parentElement.innerHTML = '';
+      parentElement.appendChild(newFormatDiv);
     });
   });
-
-  // Start observing the container of the search results for changes
-  observer.observe(document.querySelector('.gsc-results'), { childList: true });
-
-  // Also, you can call addClickEventToResults() to handle any search results that are already rendered when the page loads
-  window.onload = addClickEventToResults; // Corrected to use onload event
+}
 </script>
 </body>
 </html>
