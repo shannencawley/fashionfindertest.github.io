@@ -15,49 +15,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-  
-  <script>
-// Function to add click event listeners to search results
-function addClickEventToResults() {
-  // Get all the search result links
-  const searchResults = document.querySelectorAll('.gsc-result .gsc-thumbnail-inside a.gs-title');
-
-  searchResults.forEach(function(result) {
-    // Add an event listener to each search result link
-    result.addEventListener('click', function() {
-      // Your logic to change the format of the clicked listing goes here
-      // For example, add a class to the parent element to change its style
-      this.parentElement.classList.add('clicked-format');
-    });
-  });
-}
-
-// Since the CSE results are loaded asynchronously, use a MutationObserver to detect when results are added to the DOM
-const observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    if (mutation.addedNodes && mutation.addedNodes.length > 0) {
-      // Assume that any added node with a class of 'gsc-result' is a search result
-      const newResults = Array.from(mutation.addedNodes).some(function(node) {
-        return node.classList && node.classList.contains('gsc-result');
-      });
-
-      if (newResults) {
-        // New search results have been added, so add click event listeners to them
-        addClickEventToResults();
-      }
-    }
-  });
-});
-
-// Start observing the container of the search results for changes
-observer.observe(document.querySelector('.gsc-results'), { childList: true });
-
-// Also, you can call addClickEventToResults() to handle any search results that are already rendered when the page loads
-addClickEventToResults();
-</script>
-  	
-
 </head> 
 <body>
 	
@@ -142,5 +99,45 @@ addClickEventToResults();
             </div>
         </div>
     </footer>
+
+<script>
+  // Function to add click event listeners to search results
+  function addClickEventToResults() {
+    // Get all the search result links
+    const searchResults = document.querySelectorAll('.gsc-result .gsc-thumbnail-inside a.gs-title');
+
+    searchResults.forEach(function(result) {
+      // Add an event listener to each search result link
+      result.addEventListener('click', function() {
+        // Your logic to change the format of the clicked listing goes here
+        // For example, add a class to the parent element to change its style
+        this.parentElement.classList.add('clicked-format');
+      });
+    });
+  }
+
+  // Since the CSE results are loaded asynchronously, use a MutationObserver to detect when results are added to the DOM
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+        // Assume that any added node with a class of 'gsc-result' is a search result
+        const newResults = Array.from(mutation.addedNodes).some(function(node) {
+          return node.classList && node.classList.contains('gsc-result');
+        });
+
+        if (newResults) {
+          // New search results have been added, so add click event listeners to them
+          addClickEventToResults();
+        }
+      }
+    });
+  });
+
+  // Start observing the container of the search results for changes
+  observer.observe(document.querySelector('.gsc-results'), { childList: true });
+
+  // Also, you can call addClickEventToResults() to handle any search results that are already rendered when the page loads
+  window.onload = addClickEventToResults; // Corrected to use onload event
+</script>
 </body>
 </html>
