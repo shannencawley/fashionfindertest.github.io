@@ -257,20 +257,18 @@ nav ul li a:hover {
   font-style: italic;
 }
 
-.gs-imageResult .gs-previewTitle {
-    display: block; /* Ensure the title is displayed as a block to move it below the image */
-    color: #000; /* Change the text color as desired */
-    background-color: #FFF; /* Add a background color if needed */
-    font-size: 14px; /* Adjust the font size as needed */
-    padding: 5px 0; /* Add padding above and below the text */
-    margin-top: 10px; /* Space between the image and the title */
-    width: 100%; /* Ensure the title takes up 100% width of its container */
-    box-sizing: border-box; /* Make sure padding and border are included in the width */
-    /* More styles can be added as needed */
+#formatted-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* other styles */
 }
 
-.gs-imageResult .gs-previewTitle {
-    display: block !important;
-    color: #000 !important;
-    /* and so on for other properties as needed */
+#formatted-container .new-class-for-formatting {
+  margin: 10px;
+  /* other styles */
+}
+.new-class-for-formatting {
+  color: blue;
+  font-size: 20px;
+  /* more styles */
 }
