@@ -1,23 +1,28 @@
 // scripts.js
-
 function formatElementInfo(element) {
-    let content = '';
-    if (element.tagName === 'INPUT') {
-        content = element.value; // Get the value for input elements
-    } else if (element.tagName === 'IMG') {
-        content = element.src; // Get the src for img elements
-    } else {
-        content = element.innerHTML.trim(); // Use innerHTML for other elements
+    let content;
+    switch (element.tagName) {
+        case 'INPUT':
+            content = element.value; // Get value from input elements
+            break;
+        case 'IMG':
+            content = element.src; // Get src from img elements
+            break;
+        default:
+            content = element.innerHTML.trim(); // Use innerHTML for other elements
+            break;
     }
     
     const info = {
         tagName: element.tagName,
-        classList: [...element.classList],
-        content: content // Use the content variable here
+        classList: Array.from(element.classList),
+        content: content // This will be the value or src or innerHTML depending on element type
     };
     
     return JSON.stringify(info, null, 2);
 }
+
+
 // Event listener for when the document is fully loaded
 document.addEventListener('DOMContentLoaded', (event) => {
     // Find the container in the document where you want to append the new elements
