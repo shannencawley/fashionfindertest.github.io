@@ -1,55 +1,8 @@
-// script.js file
-// Wait for the HTML document to be fully parsed and loaded
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Query the document for elements with classes that start with 'gs'
-    const gsElements = document.querySelectorAll('[class^="gs"], [class*=" gs"]');
-    
-    // Find the container in the document where you want to append the new elements
-    const formattedContentDiv = document.getElementById('formatted-content');
-
-    // Iterate over each element found
-    gsElements.forEach(element => {
-        // Create a new div element for formatting
-        const newDiv = document.createElement('div');
-        newDiv.className = 'new-class-for-formatting';
-        newDiv.innerHTML = element.innerHTML; // Set its HTML content
-
-        // Append the new div to the desired container
-        formattedContentDiv.appendChild(newDiv);
-    });
-});
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Collect all elements that have a class name starting with 'gs'
-    const gsElements = document.querySelectorAll('[class^="gs"], [class*=" gs"]');
-
-    // Add click event listeners to these elements
-    gsElements.forEach(element => {
-        element.addEventListener('click', function() {
-            // This function will be called when a 'gs' element is clicked.
-            // You can process and output the information as needed here.
-
-            // Example: Output the innerHTML of the clicked element
-            console.log(this.innerHTML);
-
-            // If you want to display the information in a specific format,
-            // you could create a function that generates that format based
-            // on the element's content and then append it to the DOM or log it.
-            const formattedOutput = formatElementInfo(this);
-            console.log(formattedOutput);
-            
-            // If you want to do something more, like displaying the data on the page,
-            // you could append the formattedOutput to a specific element on the page.
-            // Example: document.getElementById('output').innerHTML = formattedOutput;
-        });
-    });
-});
+// scripts.js
 
 // Helper function to format the information of an element
 function formatElementInfo(element) {
-    // Format the element's information. This is a simple example
-    // that just wraps the content in a JSON-like structure. You can
-    // customize this function as needed.
+    // Format the element's information.
     const info = {
         tagName: element.tagName,
         classList: [...element.classList],
@@ -57,3 +10,30 @@ function formatElementInfo(element) {
     };
     return JSON.stringify(info, null, 2);
 }
+
+// Event listener for when the document is fully loaded
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Find the container in the document where you want to append the new elements
+    const formattedContentDiv = document.getElementById('formatted-content');
+
+    // Event delegation for handling clicks on dynamic 'gs' class elements
+    document.addEventListener('click', function(event) {
+        // Check if the clicked element has a class that starts with 'gs'
+        let target = event.target;
+        while (target != null) {
+            if (target.matches('[class^="gs"], [class*=" gs"]')) {
+                const formattedOutput = formatElementInfo(target);
+                console.log(formattedOutput);
+
+                // If you want to do something more, like displaying the data on the page,
+                // you could append the formattedOutput to a specific element on the page.
+                // Example: document.getElementById('output').innerHTML = formattedOutput;
+                
+                // Since we found our element, we can break the loop
+                break;
+            }
+            // If we haven't found our element, move up the DOM tree
+            target = target.parentElement;
+        }
+    });
+});
