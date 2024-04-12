@@ -1,4 +1,24 @@
 // script.js file
+// Wait for the HTML document to be fully parsed and loaded
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Query the document for elements with classes that start with 'gs'
+    const gsElements = document.querySelectorAll('[class^="gs"], [class*=" gs"]');
+    
+    // Find the container in the document where you want to append the new elements
+    const formattedContentDiv = document.getElementById('formatted-content');
+
+    // Iterate over each element found
+    gsElements.forEach(element => {
+        // Create a new div element for formatting
+        const newDiv = document.createElement('div');
+        newDiv.className = 'new-class-for-formatting';
+        newDiv.innerHTML = element.innerHTML; // Set its HTML content
+
+        // Append the new div to the desired container
+        formattedContentDiv.appendChild(newDiv);
+    });
+});
+
 document.addEventListener('DOMContentLoaded', (event) => {
     // Collect all elements that have a class name starting with 'gs'
     const gsElements = document.querySelectorAll('[class^="gs"], [class*=" gs"]');
