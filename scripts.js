@@ -1,16 +1,23 @@
 // scripts.js
 
-// Helper function to format the information of an element
 function formatElementInfo(element) {
-    // Format the element's information.
+    let content = '';
+    if (element.tagName === 'INPUT') {
+        content = element.value; // Get the value for input elements
+    } else if (element.tagName === 'IMG') {
+        content = element.src; // Get the src for img elements
+    } else {
+        content = element.innerHTML.trim(); // Use innerHTML for other elements
+    }
+    
     const info = {
         tagName: element.tagName,
         classList: [...element.classList],
-        content: element.innerHTML.trim()
+        content: content // Use the content variable here
     };
+    
     return JSON.stringify(info, null, 2);
 }
-
 // Event listener for when the document is fully loaded
 document.addEventListener('DOMContentLoaded', (event) => {
     // Find the container in the document where you want to append the new elements
