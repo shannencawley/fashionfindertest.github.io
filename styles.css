@@ -257,18 +257,20 @@ nav ul li a:hover {
   font-style: italic;
 }
 
-#formatted-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* other styles */
+#image-info {
+    /* Add your styles here */
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #E0FF4F;
 }
 
-#formatted-container .new-class-for-formatting {
-  margin: 10px;
-  /* other styles */
+.image-display img {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 10px;
 }
-.new-class-for-formatting {
-  color: blue;
-  font-size: 20px;
-  /* more styles */
+
+.image-display p {
+    color: #E0FF4F;
+    text-align: center;
 }
