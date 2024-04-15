@@ -40,19 +40,3 @@ document.addEventListener('click', function(event) {
     }
 });
 
-/*
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Event delegation for handling clicks on dynamic 'gs-image' class elements
-    document.addEventListener('click', function(event) {
-        let target = event.target;
-
-        // Check if the clicked element is an IMG and has the 'gs-image' class
-        if (target.tagName === 'IMG' && target.classList.contains('gs-image')) {
-            const formattedOutput = formatElementInfo(target);
-            console.log(formattedOutput);
-            // Optionally, display the formatted information on the page
-            // document.getElementById('output').innerHTML = formattedOutput;
-        }
-    });
-});
-*/
