@@ -14,6 +14,15 @@ function formatElementInfo(element) {
 
     return JSON.stringify(info, null, 2);
 }
+// trying something here. Code taken from codemyui.com
+jQuery(document).ready(function(){
+   $('h1').mousemove(function(e){
+     var rXP = (e.pageX - this.offsetLeft-$(this).width()/2);
+     var rYP = (e.pageY - this.offsetTop-$(this).height()/2);
+     $('h1').css('text-shadow', +rYP/10+'px '+rXP/80+'px rgba(227,6,19,.8), '+rYP/8+'px '+rXP/60+'px rgba(255,237,0,1), '+rXP/70+'px '+rYP/12+'px rgba(0,159,227,.7)');
+   });
+});
+// END of trying something here. Delete later if this fucks shit up.
 
 // This single event listener handles clicks anywhere in the document
 document.addEventListener('click', function(event) {
