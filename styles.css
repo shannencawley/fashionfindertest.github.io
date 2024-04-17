@@ -19,6 +19,19 @@ body {
     overflow: hidden;
 }
 
+/* ADDED BY EVE, TAKEN FROM codemyui.com */
+body{
+  text-align:center;
+  background:#dfdfdf;
+}
+h1{
+  text-transform:uppercase;
+  font-size:72px;
+  font-family:'Verdana';
+  padding:30px;
+}
+/* ok thats the end of what eve added here */
+
 header {
     background-color: #FF6663;
     padding: 10px 0;
