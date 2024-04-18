@@ -30,20 +30,7 @@
                     <li><a href="shop.php">Shop</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
-					<li>
-                    <?php
-                        include 'mylib.php';
-                        // Check if the user is logged in
-                        $userLoggedIn = isset($_SESSION['email']);
-                        // Check if the user is logged in
-						if ($userLoggedIn) {
-							echo '<a href="logout.php">Sign out? ' . $_SESSION['displayName'] . '</a>';
-						} else {
-							// If not logged in, show the login link
-							echo '<a href="login.php">LOGIN</a>';
-						}
-						?>
-                    </li>
+		    <li><a href=​"login.php">​LOGIN​</a>​</li>
                 </ul>
             </nav>
         </div>
