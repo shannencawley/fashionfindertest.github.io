@@ -44,7 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <!--Filename: login.php
-	Purpose: login page for FashionFinder prototype -->
+	Purpose: login page for FashionFinder prototype 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,17 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <li><a href="shop.php">Shop</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
-					<li>
-                    <?php
-                        // Check if the user is logged in
-						if ($userLoggedIn) {
-							echo '<a href="logout.php">Sign out? ' . $_SESSION['displayName'] . '</a>';
-						} else {
-							// If not logged in, show the login link
-							echo '<a href="signUp.php">SIGN UP</a>';
-						}
-						?>
-                    </li>
+		    <li>​<a href=​"signUp.php">​SIGN UP​</a>​</li>
                 </ul>
             </nav>
         </div>
