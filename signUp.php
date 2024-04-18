@@ -1,4 +1,4 @@
-<!--Filename: signUp.php
+<!--Filename: signUp.php 
 	Purpose: signUp page for FashionFinder prototype -->
 <!DOCTYPE html>
 <html lang="en">
