@@ -1,4 +1,5 @@
-<?php	//logout.php to handle logging out the users
+//logout.php to handle logging out the users
+<?php	
 session_start(); // Start the session
 
 // Unset all session variables
