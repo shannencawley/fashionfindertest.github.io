@@ -107,13 +107,24 @@ $userLoggedIn = isset($_SESSION['email']);
                 <img src="fashion-finder-small.png" alt="Fashion Finder Logo Small" class="logo-small">
     </div>
     <header>
-        <div class="container">
+         <div class="container">
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="shop.php">Shop</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
+					<li align="right">
+						<?php
+                        // Check if the user is logged in
+						if ($userLoggedIn) {
+							echo '<a href="logout.php">Sign out? ' . $_SESSION['displayName'] . '</a>';
+						} else {
+							// If not logged in, show the login link
+							echo '<a href="login.php">LOGIN</a> / <a href="signUp.php">SIGN UP</a>';
+						}
+						?>
+					</li>
 					
                 </ul>
             </nav>
