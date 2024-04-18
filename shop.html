@@ -1,11 +1,5 @@
-<?php
-session_start();
-include 'mylib.php';
 
-// Check if the user is logged in
-$userLoggedIn = isset($_SESSION['email']);
-?>
-<!--Filename: shop.php
+<!--Filename: shop.html
 	Purpose: shop page for FashionFinder prototype -->
 <!DOCTYPE html>
 <html lang="en">
@@ -19,84 +13,7 @@ $userLoggedIn = isset($_SESSION['email']);
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-	<style>
-
-	* {box-sizing: border-box;}
-	/* Button used to open the contact form - fixed at the bottom of the page */
-	.open-button {
-	  background-color: #00272B;
-	  color: white;
-	  padding: 16px 20px;
-	  border: none;
-	  cursor: pointer;
-	  opacity: 0.8;
-	  position: fixed;
-	  bottom: 23px;
-	  right: 28px;
-	  width: 280px;
-	}
-
-	/* The popup form - hidden by default */
-	.form-popup {
-	  display: none;
-	  position: fixed;
-	  bottom: 0;
-	  right: 15px;
-	  border: 3px solid #E0FF4F;
-	  z-index: 9;
-	}
-
-	/* Add styles to the form container */
-	.form-container {
-	  max-width: 300px;
-	  padding: 10px;
-	  background-color: #00272B;
-	}
-
-	/* Full-width input fields */
-	.form-container input[type=text], .form-container input[type=password] {
-	  width: 100%;
-	  padding: 15px;
-	  margin: 5px 0 22px 0;
-	  border: none;
-	  background: #f1f1f1;
-	}
-
-	/* When the inputs get focus, do something */
-	.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-	  background-color: #ddd;
-	  outline: none;
-	}
-
-	/* Set a style for the submit/login button */
-	.form-container .btn {
-	  background-color: #FF2ECC;
-	  color: white;
-	  padding: 16px 20px;
-	  border: none;
-	  cursor: pointer;
-	  width: 100%;
-	  margin-bottom:10px;
-	  opacity: 0.8;
-	}
-
-	/* Add a red background color to the cancel button */
-	.form-container .cancel {
-	  background-color: #A51080;
-	}
-
-	/* Add some hover effects to buttons */
-	.form-container .btn:hover, .open-button:hover {
-	  opacity: 1;
-	}
-	.welcome {
-		font-size: 25px;
-		font-style: bold;
-		text-align: center;
-		color: #ffd166;
-		/* Text color */
-	}
-	</style>
+	
 </head>
 <body>
 	
@@ -113,17 +30,7 @@ $userLoggedIn = isset($_SESSION['email']);
                     <li><a href="shop.php">Shop</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
-					<li>
-						<?php
-                        // Check if the user is logged in
-						if ($userLoggedIn) {
-							echo '<a href="logout.php">Sign out? ' . $_SESSION['displayName'] . '</a>';
-						} else {
-							// If not logged in, show the login link
-							echo '<a href="login.php">LOGIN</a> / <a href="signUp.php">SIGN UP</a>';
-						}
-						?>
-					</li>
+					
                 </ul>
             </nav>
         </div>
@@ -138,32 +45,8 @@ $userLoggedIn = isset($_SESSION['email']);
 	<!---------------->
     </main>
 	
-	<button class="open-button" onclick="openForm()">Login</button>
-
-    <div class="form-popup" id="myForm">
-        <form action="login.php" method="POST" class="form-container">
-            <h1>Login</h1>
-
-            <label for="loginField"><b>Display Name</b></label>
-            <input type="text" placeholder="Enter Display Name" name="loginField" required>
-
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
     </div>
 
-	<script>
-	function openForm() {
-	  document.getElementById("myForm").style.display = "block";
-	}
-
-	function closeForm() {
-	  document.getElementById("myForm").style.display = "none";
-	}
-	</script>
     <footer class="footer">
         <div class="footer__addr">
             <img src="images/fashion-finder-small.png" alt="Fashion Finder Logo Small" width="100" height="100">
