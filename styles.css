@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Chakra Petch", sans-serif;
-    color: #E0FF4F;
+    /*color: #E0FF4F; */
     background-color: #00272B;
     overflow-x: hidden; /* prevent horizontal scrollbar */
     display: flex;
@@ -37,7 +37,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #E0FF4F;
+    /* color: #E0FF4F; */
 }
 
 nav ul li a:hover {
@@ -271,6 +271,6 @@ nav ul li a:hover {
 }
 
 .image-display p {
-    color: #E0FF4F;
+    /* color: #E0FF4F; */
     text-align: center;
 }
