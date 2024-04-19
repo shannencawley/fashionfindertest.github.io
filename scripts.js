@@ -5,9 +5,6 @@
 // an image is clicked on our website which converts it to a JSON string and logs it to the console.
 
 
-
-
-
 document.addEventListener('click', function(event) {
     let target = event.target;
 
@@ -17,46 +14,45 @@ document.addEventListener('click', function(event) {
         let linkElement = target.closest('a.gs-previewLink');
         let imageUrl = linkElement ? linkElement.href : 'URL not found';
 
-        // Functionality to display the image information
-        const imageSrc = target.src; // Gets the source of the image
-        const imageTitle = target.getAttribute('alt'); // Gets the alt text as the title
+        // Get the source of the image and the alt text as the title
+        const imageSrc = target.src;
+        const imageTitle = target.getAttribute('alt');
 
-        // Update the formatElementInfo function to include the URL
-        const formattedOutput = formatElementInfo(target, imageUrl); // Pass the URL to the function
+        // Log the formatted information to the console
+        const formattedOutput = formatElementInfo(target, imageUrl);
         console.log(formattedOutput);
 
         // Create the content you want to display
         const displayContent = `
-            <div class="image-display">
-                <img src="${imageSrc}" alt="${imageTitle}">
-                <p>${imageTitle}</p>
-                <p>URL: ${imageUrl}</p>
+            <div class="image-info-card">
+                <p class="image-title">${imageTitle}</p>
+                <img src="${imageSrc}" alt="${imageTitle}" class="info-image">
+                <p class="image-url">URL: ${imageUrl}</p>
             </div>
         `;
-        
+
         // Insert the content into the image-info div
         document.getElementById('image-info').innerHTML = displayContent;
     }
 });
 
-// Update the formatElementInfo function to accept the URL as an argument
 function formatElementInfo(element, url) {
-    let title = element.getAttribute('title'); // Get the title attribute
-    let src = element.getAttribute('src'); // Get the src attribute
+    // Extract the necessary attributes
+    let title = element.getAttribute('title') || element.getAttribute('alt');
+    let src = element.getAttribute('src');
 
+    // Create the info object
     const info = {
         tagName: element.tagName,
         classList: Array.from(element.classList),
-        src: src, // This will be the src attribute of the image
-        title: title, // This will be the title attribute of the image
-        url: url // This will be the URL of the website
+        src: src,
+        title: title,
+        url: url
     };
 
+    // Return the information as a string
     return JSON.stringify(info, null, 2);
 }
-
-
-
 
 
 
