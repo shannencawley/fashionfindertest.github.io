@@ -279,7 +279,7 @@ nav ul li a:hover {
 }
 
 /* Styling for the URL for the image */
-.image-display .url {
+.image-display {
     color: #FF1493; /* pink color for the URL text */
     text-align: center;
     margin-top: 6px; /* Adjust spacing as needed */
