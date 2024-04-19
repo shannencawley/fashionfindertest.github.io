@@ -272,5 +272,7 @@ nav ul li a:hover {
 
 .image-display p {
     color: #FF1493; 
-    text-align: right;
+    position: relative;
+    top: 6px;
+    text-align: center;
 }
