@@ -1,4 +1,8 @@
 // scripts.js
+// Shannen: This script takes the src and title values that are inspected upon click. A string
+// of html is generated with <div> image-info </div> that displays the info scraped. 
+// function formatElementINfo creates an object containing these pieces of information every time
+// an image is clicked on our website which converts it to a JSON string and logs it to the console.
 
 // Helper function to format the information of an element
 function formatElementInfo(element) {
