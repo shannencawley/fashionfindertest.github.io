@@ -258,6 +258,7 @@ nav ul li a:hover {
   font-style: italic;
 }
 
+/* Shannen: Styling for the image and the title*/
 #image-info {
     padding: 20px;
     margin-top: 20px;
@@ -275,4 +276,11 @@ nav ul li a:hover {
     position: relative;
     top: 6px;
     text-align: center;
+}
+
+/* Styling for the URL for the image */
+.image-display .url {
+    color: #FF1493; /* pink color for the URL text */
+    text-align: center;
+    margin-top: 6px; /* Adjust spacing as needed */
 }
