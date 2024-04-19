@@ -4,6 +4,8 @@
 // function formatElementINfo creates an object containing these pieces of information every time
 // an image is clicked on our website which converts it to a JSON string and logs it to the console.
 
+
+
 // Helper function to format the information of an element
 function formatElementInfo(element, imageUrl) {
     let title = element.getAttribute('alt'); // 'alt' attribute often used as a title in image tags
@@ -53,5 +55,6 @@ document.addEventListener('click', function(event) {
         console.log(formattedOutput);
     }
 });
+
 
 
