@@ -5,12 +5,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Chakra Petch", sans-serif;
-    color: #E0FF4F; 
+    //color: #E0FF4F;
     background-color: #00272B;
     overflow-x: hidden; /* prevent horizontal scrollbar */
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* body takes at least the height of the viewport */
+    cursor: url('images/cursor.png'), auto;
 }
 
 .container {
@@ -19,8 +20,8 @@ body {
     overflow: hidden;
 }
 
-
 header {
+    color: #E0FF4F;
     background-color: #FF6663;
     padding: 10px 0;
 }
@@ -37,11 +38,12 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    /* color: #E0FF4F; */
+    color: #E0FF4F;
 }
 
 nav ul li a:hover {
     color: #00272B;
+    cursor: url('images/cursor1.png'), auto;
 }
 
 .logo {
@@ -73,7 +75,8 @@ nav ul li a:hover {
     color: #00272B;
     background-color: #E0FF4F;
     border-top: 1px solid #FF2ECC;
-    margin-top: auto;
+    margin-top: auto; 
+
 }
 
 .footer > * {
@@ -140,6 +143,9 @@ nav ul li a:hover {
     color: #00272B;
 }
 
+.footer ul li a: hover {
+    cursor: url('images/cursor1.png'), auto;
+}
 .footer__nav {
     display: flex;
     flex-flow: row wrap;
@@ -152,6 +158,12 @@ nav ul li a:hover {
 
 .nav__ul a {
     color: #666;
+}
+
+.nav__ul ul li a: hover {
+    color: #666;
+    cursor: url('images/cursor1.png'), auto;
+    
 }
 
 .nav__ul--extra {
@@ -258,29 +270,104 @@ nav ul li a:hover {
   font-style: italic;
 }
 
-/* Shannen: Styling for the image and the title*/
-#image-info {
-    padding: 20px;
-    margin-top: 20px;
-    border: 1px solid #FF1493;
+* {box-sizing: border-box;}
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    background-color: #00272B;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
 }
 
-.image-display img {
-    max-width: 100%; /* Makes the image responsive */
-    height: auto; /* Maintains aspect ratio */
-    margin-bottom: 10px;
+.login-form {
+	color:#E0FF4F;
 }
 
-.image-display p {
-    color: #FF1493; 
-    position: relative;
-    top: 6px;
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    color:#E0FF4F;
+    border: 3px solid #E0FF4F;
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: #00272B;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #FF2ECC;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: #A51080;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+.welcome {
+    font-size: 25px;
+    font-style: bold;
     text-align: center;
+    color: #ffd166;
+    /* Text color */
 }
 
-/* Styling for the URL for the image */
-.image-display {
-    color: #FF1493; /* pink color for the URL text */
-    text-align: center;
-    margin-top: 6px; /* Adjust spacing as needed */
+.column {
+    margin: 0px 5px 0px 5px;
+    //padding: 0px 0px 0px 0px;
+    float: left;
+    width: 24%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    height: 0%;
+}
+
+@media screen and (max-width: 1000px) {
+    .column {
+        width: 60%;
+        margin: 0px 10px 0px 10px;
+        float: bottom;
+        }
 }
