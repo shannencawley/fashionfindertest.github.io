@@ -31,7 +31,7 @@ document.addEventListener('click', function(event) {
         // Find the closest ancestor element which is the container of the image result
         let container = target.closest('.gsc-imageResult');
         // From the container, find the div that holds the URL
-        let urlElement = container.querySelector('a.gs-reviewLink');
+        let urlElement = container.querySelector('a.gs-previewLink');
         let imageUrl = urlElement ? urlElement.innerText : 'URL not found';
 
         // Functionality to display the image information
